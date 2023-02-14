@@ -69,3 +69,41 @@ margin: 15px;
 .container {
     margin-top: 50px;
 }
+.caption {
+    background-color: rgb(164, 19, 94) ;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+.tabla1 {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+
+    }
+    .tabla2 {
+        display: flex;
+        flex-grow: 1;
+        width: 100%;
+    }
+    .tabla3 {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        }
+.growtabla {
+    width: 100%;
+}
+.celda1 {
+    width: 700px;
+    height: 20px;
+    border: 1px solid gray;
+}
+.celda2 {
+    width: 700px;
+    border: 1px solid gray
+}
+.celda3 {
+    width: 350px;
+    border: 1px solid gray
+}
