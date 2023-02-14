@@ -73,23 +73,24 @@ margin: 15px;
     background-color: rgb(164, 19, 94) ;
     color: white;
     text-align: center;
-    margin-top: 50px;
-}
+   }
 .tabla1 {
     display: flex;
     flex-grow: 1;
     width: 100%;
-
+    margin-top: 50px;
     }
     .tabla2 {
         display: flex;
         flex-grow: 1;
         width: 100%;
+        margin-top: 50px;
     }
     .tabla3 {
         width: 100%;
         display: flex;
         flex-grow: 1;
+        margin-top: 50px;
         }
 .growtabla {
     width: 100%;
