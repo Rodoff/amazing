@@ -15,164 +15,160 @@
     <header>
         <div class="cabeza">
             <img src="./assets/img/LogoAmazingEvents.png" alt="logo amazing Events">
-            <ul class="nav justify-content-end nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./past.html">Past Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contact.html">contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" style="background-color: rgb(164, 19, 94)"
-                        href="#">stats</a>
-                </li>
-            </ul>
+            <input type="checkbox" id="menu-check">
+            <label id="menu" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+            </label>
+            <nav>
+                <ul class="nav justify-content-end nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./upcoming.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./past.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./contact.html">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" style="background-color: #D90368"
+                            href="#">stats</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <main>
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" 
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" class="active"
-                    aria-label="Slide 5"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Home</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Upcoming Events</h5>
-
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Past Events</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>contact</h5>
-
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>stats</h5>
-
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <main class="flex-grow-0.5">
+        <div class="d-flex justify-content-between align-item-center carro">
+            <div class="prev d-flex"><a class="grow" href="./contact.html">&lt;</a></div>
+            <div class="actual d-flex"><a class="grow" href="#">stats</a></div>
+            <div class="next d-flex"><a class="grow" href="./index.html">&gt;</a></div>
         </div>
-<div class="growtabla">
-<table class="tabla1"> 
-    <tr class="caption">
-    <th colspan="5">Events statistics</th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2">Events with the highest percentage of attendance</th>
-    <th class="celda2" colspan="2">Events with the lowest percentage of attendance</th>
-    <th class="celda3">Event with larger capacity</th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-</table>
-<table class="tabla2"> 
-    <tr class="caption">
-    <th colspan="5">Upcoming Events statistics by category</th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2">Categories</th>
-    <th class="celda2" colspan="2">Revenues</th>
-    <th class="celda3" >Percentage of attendance</th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-</table>
-<table class="tabla3"> 
-    <tr class="caption">
-    <th colspan="5">Past Events statistics by category</th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2">Categories</th>
-    <th class="celda2" colspan="2">Revenues</th>
-    <th class="celda3">Percentage of attendance</th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-<tr>
-    <th class="celda1" colspan="2"></th>
-    <th class="celda2" colspan="2"></th>
-    <th class="celda3"></th>
-</tr>
-</table>
-</div>
 
- 
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+
+        <div class="encabeza">
+            <div class="cate">
+                <input type="checkbox" id="category1" name="category" value="category1">
+                <label class="qqq" for="category1">Category1</label>
+                <input type="checkbox" id="category2" name="position" value="category2">
+                <label class="qqq" for="category2">Category2</label>
+                <input type="checkbox" id="category3" name="position" value="category3">
+                <label class="qqq" for="category3">Category3</label>
+                <input type="checkbox" id="category4" name="position" value="category4">
+                <label class="qqq" for="category4">Category4</label>
+            </div>
+            <div>
+                <form class="d-flex" role="search">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class=" sear btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="growtabla d-flex flex-column">
+            <table class="tabla1 justify-content-center">
+                <tr class="caption">
+                    <th colspan="5">Events statistics</th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2">Events with the highest percentage of attendance</th>
+                    <th class="celda2" colspan="2">Events with the lowest percentage of attendance</th>
+                    <th class="celda3">Event with larger capacity</th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+            </table>
+            <table class="tabla2 justify-content-center">
+                <tr class="caption">
+                    <th colspan="5">Upcoming Events statistics by category</th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2">Categories</th>
+                    <th class="celda2" colspan="2">Revenues</th>
+                    <th class="celda3">Percentage of attendance</th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+            </table>
+            <table class="tabla3 justify-content-center">
+                <tr class="caption">
+                    <th colspan="5">Past Events statistics by category</th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2">Categories</th>
+                    <th class="celda2" colspan="2">Revenues</th>
+                    <th class="celda3">Percentage of attendance</th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+                <tr>
+                    <th class="celda1" colspan="2"></th>
+                    <th class="celda2" colspan="2"></th>
+                    <th class="celda3"></th>
+                </tr>
+            </table>
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="logos">
+         <figure>
+             <img class="social grow" src="./assets/img/Icono-Whatsapp.png" alt="logoFacebook">
+         </figure>
+         <figure>
+             <img class="social  grow" src="./assets/img/Face-Best.png" alt="logoFacebook">
+         </figure>
+         <figure>
+             <img class="social  grow" src="./assets/img/insta.png" alt="logoInstagram">
+         </figure>
+     </div>
+     <div class="cohorte">
+         <h5>FE05-TN</h5>
+     </div>
+ </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
+
 
 </html>
