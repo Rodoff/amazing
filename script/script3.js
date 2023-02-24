@@ -5,7 +5,8 @@ let otroeven = []
 
 function printEvents() {
     for (let event of eventos) {
-        let listaev = `
+        if (event.estimate >= 1) {
+            let listaev = `
         <div class="contene d-flex flex-row flex-wrap">
     <div class="card" style="width: 18rem;">
     <img src="${event.image}" class="card-img-top" alt="${event.name}">
@@ -17,8 +18,8 @@ function printEvents() {
         </div> 
         </div> 
     `
-        otroeven.push(listaev)
-
+            otroeven.push(listaev)
+        }
     }
 }
 function imprimir() {
@@ -28,6 +29,3 @@ function imprimir() {
 console.log(otroeven)
 printEvents();
 imprimir();
-
-
-
