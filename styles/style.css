@@ -32,6 +32,9 @@ header img {
 .cabeza a:visited {
     color: #D90368;
 }
+.cabeza a {
+    color: #D90368;
+}
 
 .nav {
     display: flex;
@@ -55,6 +58,9 @@ header img {
 .actual a:visited {
     color: #D90368;
 }
+.actual a {
+    color: #D90368;
+}
 
 .carro a {
     text-decoration: none;
@@ -73,14 +79,18 @@ header img {
 .prev a:visited {
     color: white;
 }
-
+.prev a {
+    color: white;
+}
 .next {
     color: white;
     align-items: center;
     margin-right: 25px;
 }
-
 .next a:visited {
+    color: white;
+}
+.next a {
     color: white;
 }
 
