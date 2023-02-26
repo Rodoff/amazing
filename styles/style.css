@@ -28,6 +28,12 @@ header img {
     width: 100%;
     justify-content: space-between;
 }
+.cate {
+    width: 80%;
+}
+.busca {
+    width: 100%;
+}
 
 .cabeza a:visited {
     color: #D90368;
@@ -82,6 +88,7 @@ header img {
 .prev a {
     color: white;
 }
+
 .next {
     color: white;
     align-items: center;
