@@ -15,7 +15,7 @@ function printEvents() {
         </div>
         <div class="card-footer d-flex justify-content-between">
         <p>Price: ${tarj.price}</p>
-    <a href="./details.html" class="bote btn-outline-success">View Event >></a>
+    <a href="./details.html?_id=${tarj._id}" class="bote btn-outline-success">View Event >></a>
         </div>
         </div>
         </div> 
@@ -32,4 +32,31 @@ console.log(otroeven)
 printEvents();
 imprimir();
 
+let categos = []
+console.log(eventos.forEach(each => {
+    if (!categos.includes(each.category)) {
+        categos.push(each.category)
+    }
+}))
+console.log(categos);
+
+let prueba = []
+
+function printca() {
+    for (let cate of categos) {
+        let listaca = `
+            <input type="checkbox" id="${cate}" name="category" value="${cate}">
+            <label class="qqq" for="${cate}">${cate}</label>
+        `
+        prueba.push(listaca)
+
+    }
+}
+function imprimirca() {
+    let listaca = document.getElementById('probando')
+    listaca.innerHTML = prueba.join('')
+}
+console.log(prueba)
+printca();
+imprimirca();
 
