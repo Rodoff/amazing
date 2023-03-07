@@ -20,7 +20,7 @@ function defineDetails(tarj) {
     </ul>
    </div>
    <div class="card-footer d-flex justify-content-between">
-    <p>Price: 225</p>
+    <p>Price: ${tarj.price}</p>
 <a href="./index.html" class="bote btn-outline-success"> &lt;&lt; Back </a>
     </div>
 </div>
@@ -31,7 +31,7 @@ console.log(defineDetails)
 
 function printTemplates(detalle, query) {
     let container = document.querySelector(detalle)
-    card = eventos.find(each =>  each._id == query)
+    card = eventos.find(each => each._id == query)
     console.log(card)
     let details = defineDetails(card)
     container.innerHTML = details

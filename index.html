@@ -54,26 +54,20 @@
 
         <div class="encabeza">
             <div class="cate d-flex flex-wrap" id="probando">
-                <!-- <input type="checkbox" id="category1" name="category" value="category1">
-                <label class="qqq" for="category1">Category1</label>
-                <input type="checkbox" id="category2" name="position" value="category2">
-                <label class="qqq" for="category2">Category2</label>
-                <input type="checkbox" id="category3" name="position" value="category3">
-                <label class="qqq" for="category3">Category3</label>
-                <input type="checkbox" id="category4" name="position" value="category4">
-                <label class="qqq" for="category4">Category4</label> -->
+               
             </div>
-            <div id="SearchCHECK" >
+            
+            <div id="SearchCHECK">
                 <form class="busca d-flex" role="search">
-                    <input class="form-control" id="id_search" type="search" placeholder="Search" aria-label="Search">
+                    <input onkeyup="captureData() "class="form-control" id="id_search" type="search" placeholder="Search" value="" aria-label="Search">
                     <button class=" sear btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
         <div class="tarjetas" id="cardEvents">
-         
+
         </div>
-        
+
     </main>
     <footer>
         <div class="logos">
@@ -96,8 +90,8 @@
         crossorigin="anonymous"></script>
     <script src="./script/data.js"></script>
     <script src="./script/script.js"></script>
-        
-    </body>
+    <script src="./script/filter.js"></script>
+</body>
 
 
 </html>

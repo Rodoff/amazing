@@ -136,7 +136,7 @@ header img {
     justify-items: center;
     justify-content: center;
     width: 90%;
-    height: 175px;
+    height: 180px;
     border: 2px solid grey;
     margin: 15px;
 }
@@ -145,7 +145,6 @@ header img {
     display: flex;
     justify-items: center;
     justify-content: center;
-    height: 500px;
     border: 5px solid grey;
     margin: 20px;
 }

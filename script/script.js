@@ -43,10 +43,10 @@ console.log(categos);
 let prueba = []
 
 function printca() {
-    for (let cate of categos) {
+    for (let each of categos) {
         let listaca = `
-            <input type="checkbox" id="${cate}" name="category" value="${cate}">
-            <label class="qqq" for="${cate}">${cate}</label>
+            <input onclick="captureData()" class="class_checks" type="checkbox" id="${each}" name="category" value="${each}">
+            <label class="qqq" for="${each}">${each}</label>
         `
         prueba.push(listaca)
 

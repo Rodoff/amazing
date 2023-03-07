@@ -35,7 +35,7 @@ function printEvents() {
     }
 }
 function imprimir() {
-    let listaeventos = document.getElementById('cardupEvents')
+    let listaeventos = document.getElementById('cardEvents')
     listaeventos.innerHTML = otroeven.join('')
 }
 console.log(otroeven)
@@ -56,7 +56,7 @@ let prueba = []
 function printca() {
     for (let cate of categos) {
         let listaca = `
-            <input type="checkbox" id="${cate}" name="category" value="${cate}">
+            <input onclick="captureData()" type="checkbox" class="class_checks" id="${cate}" name="category" value="${cate}">
             <label class="qqq" for="${cate}">${cate}</label>
         `
         prueba.push(listaca)
