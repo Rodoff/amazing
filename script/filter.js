@@ -8,9 +8,9 @@ function captureData() {
             imprimir('cardEvents',filtro)
             console.log(filtro);
     }
-    // else {
-    //     notFound('#cardEvent')
-    // }
+     else {
+         notFound('#cardEvents')
+     }
 }
 
 
