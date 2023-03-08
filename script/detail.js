@@ -1,10 +1,7 @@
 const eventos = data.events;
 let query = location.search
-console.log(query)
 let params = new URLSearchParams(query)
-
 let id_query = params.get("_id")
-console.log(id_query)
 function defineDetails(tarj) {
     return `
     <div class="contene d-flex flex-row flex-wrap">
@@ -36,7 +33,6 @@ function printTemplates(detalle, query) {
     let details = defineDetails(card)
     container.innerHTML = details
 }
-
 printTemplates(`#detalle`, id_query)
 
 
