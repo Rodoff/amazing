@@ -1,11 +1,11 @@
-console.log(data);
+// console.log(data);
 const eventos = data.events;
-console.log(eventos)
-let otroeven = []
+// console.log(eventos)
 
-function printEvents() {
-    for (let tarj of eventos) {
-        let listaev = `
+function printEvents(array_eventos) {
+    let templates = []
+    for (let tarj of array_eventos) {
+        let card = `
         <div class="contene d-flex flex-row flex-wrap">
     <div class="card" style="width: 18rem;">
     <img src="${tarj.image}" class="card-img-top" alt="${tarj.name}">
@@ -20,17 +20,17 @@ function printEvents() {
         </div>
         </div> 
     `
-        otroeven.push(listaev)
-
+        templates.push(card)
     }
+    return templates
 }
-function imprimir() {
-    let listaeventos = document.getElementById('cardEvents')
-    listaeventos.innerHTML = otroeven.join('')
+function imprimir(id, array) {
+    let templates = printEvents(array)
+    let listaeventos = document.getElementById(id)
+    listaeventos.innerHTML = templates.join('')
 }
-console.log(otroeven)
-printEvents();
-imprimir();
+
+imprimir("cardEvents", eventos);
 
 let categos = []
 console.log(eventos.forEach(each => {

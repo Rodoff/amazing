@@ -1,53 +1,52 @@
-console.log(data);
-const eventos = data.events;
-console.log(eventos)
-let otroeven = []
+const futuro = data.events;
 
-let uplist = []
+let eventos = []
 
-for (let up of eventos) {
-    if (data.currentDate < up.date) {
-        uplist.push(up)
+for (let past of futuro) {
+    if (data.currentDate < past.date) {
+        eventos.push(past)
     }
 }
+// const pastlist = eventos.filter(each => {(data.currentDate > event.date) } );
+// console.log(pastlist)
 
-console.log(uplist);
-
-function printEvents() {
-    for (let tarj of uplist) {
-
-        let listaev = `
+function printEvents(array_eventos) {
+    let templates = []
+    for (let tarj of array_eventos) {
+        let card = `
             <div class="contene d-flex flex-row flex-wrap">
-            <div class="card" style="width: 18rem;">
-            <img src="${tarj.image}" class="card-img-top" alt="${tarj.name}">
-            <div class="card-body">
-                <h5 class="card-title">${tarj.name}</h5>
-                <p class="card-text">${tarj.description}</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                <p>Price: ${tarj.price}</p>
-                <a href="./details.html?_id=${tarj._id}" class="bote btn-outline-success">View Event >></a>
-                </div>
-                </div>
-                </div> 
-            `
-        otroeven.push(listaev)
+    <div class="card" style="width: 18rem;">
+    <img src="${tarj.image}" class="card-img-top" alt="${tarj.name}">
+    <div class="card-body">
+        <h5 class="card-title">${tarj.name}</h5>
+        <p class="card-text">${tarj.description}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+        <p>Price: ${tarj.price}</p>
+        <a href="./details.html?_id=${tarj._id}" class="bote btn-outline-success">View Event >></a>
+        </div>
+        </div>
+        </div> 
+    `
+    templates.push(card)
     }
+    return templates
 }
-function imprimir() {
-    let listaeventos = document.getElementById('cardEvents')
-    listaeventos.innerHTML = otroeven.join('')
+
+function imprimir(id, array) {
+    let templates = printEvents(array)
+    let listaeventos = document.getElementById(id)
+    listaeventos.innerHTML = templates.join('')
 }
-console.log(otroeven)
-printEvents();
-imprimir();
+
+imprimir("cardEvents", eventos);
 
 let categos = []
-eventos.forEach(each => {
+console.log(eventos.forEach(each => {
     if (!categos.includes(each.category)) {
         categos.push(each.category)
     }
-})
+}))
 
 console.log(categos);
 
@@ -56,7 +55,7 @@ let prueba = []
 function printca() {
     for (let cate of categos) {
         let listaca = `
-            <input onclick="captureData()" type="checkbox" class="class_checks" id="${cate}" name="category" value="${cate}">
+            <input type="checkbox" onclick="captureData()" class="class_checks" id="${cate}" name="category" value="${cate}">
             <label class="qqq" for="${cate}">${cate}</label>
         `
         prueba.push(listaca)
