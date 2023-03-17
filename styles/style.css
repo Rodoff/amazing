@@ -111,6 +111,9 @@ header img {
 
 .qqq {
     font-size: 25px;
+    font-weight: bolder;
+    margin: 5px;
+    padding: 5px;
 }
 
 .tarjetas {
@@ -136,7 +139,7 @@ header img {
     justify-items: center;
     justify-content: center;
     width: 90%;
-    height: 180px;
+    height: 160px;
     border: 2px solid grey;
     margin: 15px;
 }
@@ -190,7 +193,18 @@ header img {
     text-align: center;
 }
 
+.th-head {
+    font-size: 25px;
+    font-weight: bolder; 
+}
+.t-body{
+    background-color: gainsboro;
+    opacity: 0.9;
+}
+
 .tabla1 {
+    font-size: 25px;
+    text-align: center;
     display: flex;
     flex-grow: 1;
     width: 100%;
@@ -198,17 +212,24 @@ header img {
 }
 
 .tabla2 {
+    font-size: 25px;
+    text-align: center;
     display: flex;
     flex-grow: 1;
     width: 100%;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .tabla3 {
+    font-size: 25px;
+    text-align: center;
     width: 100%;
     display: flex;
     flex-grow: 1;
     margin-top: 50px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
 }
 
 .growtabla {
