@@ -42,7 +42,7 @@ function imprimir(id, array) {
 
 async function checkApi() {
     try {
-        let urlApi1 = "https://api-amazingevents.onrender.com/api/amazing-events"
+        let urlApi1 = "https://mh.up.railway.app/api/amazing-events"
         let fetchResponse = await fetch(urlApi1)
         const response = await fetchResponse.json()
         let evento = response.events;

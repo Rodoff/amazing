@@ -42,11 +42,3 @@ console.log(defineDetails)
 
 fetchApi()
 
-// function printTemplates(detalle, query) {
-//     let container = document.querySelector(detalle)
-//     card = eventos.find(each => each._id == query)
-//     console.log(card)
-//     let details = defineDetails(card)
-//     container.innerHTML = details
-// }
-
