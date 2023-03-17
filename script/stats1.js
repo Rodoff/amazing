@@ -15,7 +15,7 @@ async function printabla1() {
         document.getElementById("max").innerHTML = eventos[eventos.length - 1].name;
         document.getElementById("maxasis").innerHTML = eventos[eventos.length - 1].porcentaje + "%";
         document.getElementById("min").innerHTML = eventos[0].name;
-        document.getElementById("minasis").innerHTML = eventos[0].porcentaje + "%";
+        document.getElementById("minasis").innerHTML = eventos[0].porcentaje  + "%";
 
 
         eventos = eventos.sort((a, b) => a.capacity - b.capacity)
