@@ -203,7 +203,7 @@ header img {
 }
 
 .tabla1 {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     display: flex;
     flex-grow: 1;
@@ -212,7 +212,7 @@ header img {
 }
 
 .tabla2 {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     display: flex;
     flex-grow: 1;
@@ -222,7 +222,7 @@ header img {
 }
 
 .tabla3 {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     width: 100%;
     display: flex;
@@ -237,13 +237,13 @@ header img {
 }
 
 .celda1 {
-    width: 700px;
+    width: 450px;
     height: 20px;
     border: 1px solid gray;
 }
 
 .celda2 {
-    width: 700px;
+    width: 450px;
     border: 1px solid gray
 }
 
