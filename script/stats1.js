@@ -4,23 +4,35 @@ async function printabla1() {
         let fetchResponse = await fetch(urlApi);
         let response = await fetchResponse.json();
         let eventos = response.events;
+
+        let stats = eventos.map(each => {
+            let prueba = { 
+                name : [each.name],
+                percent : 100 * (each.assistance / each.capacity).toFixed(4) }
+                
+return prueba
+        }).sort((e1, e2)=>e1.percent -e2.percent)
+        capa = eventos.sort((e1, e2)=>e1.capacity -e2.capacity)
+
+        document.getElementById("tabla1").innerHTML=template(stats[stats.length -1], stats[0], capa[capa.length -1] )
+
         
-        for (let evento of eventos) {
-                   evento.porcentaje = evento.assistance / evento.capacity * 100;
-                   evento.porcentaje = evento.porcentaje.toFixed(2);
-              }
+        // for (let evento of eventos) {
+        //            evento.porcentaje = evento.assistance / evento.capacity * 100;
+        //            evento.porcentaje = evento.porcentaje.toFixed(2);
+        //       }
  
         
-        eventos = eventos.sort((a, b) => a.porcentaje - b.porcentaje)
-        document.getElementById("max").innerHTML = eventos[eventos.length - 1].name;
-        document.getElementById("maxasis").innerHTML = eventos[eventos.length - 1].porcentaje + "%";
-        document.getElementById("min").innerHTML = eventos[0].name;
-        document.getElementById("minasis").innerHTML = eventos[0].porcentaje  + "%";
+        // eventos = eventos.sort((a, b) => a.porcentaje - b.porcentaje)
+        // document.getElementById("max").innerHTML = eventos[eventos.length - 1].name;
+        // document.getElementById("maxasis").innerHTML = eventos[eventos.length - 1].porcentaje + "%";
+        // document.getElementById("min").innerHTML = eventos[0].name;
+        // document.getElementById("minasis").innerHTML = eventos[0].porcentaje  + "%";
 
 
-        eventos = eventos.sort((a, b) => a.capacity - b.capacity)
-        document.getElementById("maxcapa").innerHTML = eventos[eventos.length - 1].name;
-        document.getElementById("maxcapas").innerHTML = eventos[eventos.length - 1].capacity;
+        // eventos = eventos.sort((a, b) => a.capacity - b.capacity)
+        // document.getElementById("maxcapa").innerHTML = eventos[eventos.length - 1].name;
+        // document.getElementById("maxcapas").innerHTML = eventos[eventos.length - 1].capacity;
     } catch (error) {
         console.log(error);
     }
@@ -65,7 +77,7 @@ async function printabla2() {
             porcentaje = porcentaje.toFixed(2);
             //console.log(porcentaje);
 
-            let card = `<tr class="t-body">
+            let card = `<tr class="t-bod">
                  <td class="celda1" colspan="2">${category}</td>
                  <td class="celda2" colspan="2">$${ganancia}</td>
                  <td class="celda3" colspan="2">${porcentaje}%</td>
@@ -118,7 +130,7 @@ async function printabla3() {
             porcentaje = porcentaje.toFixed(2);
             //console.log(porcentaje);
 
-            let card = `<tr class="t-body">
+            let card = `<tr class="t-bod">
                  <td class="celda1" colspan="2">${category}</td>
                  <td class="celda2" colspan="2">$${ganancia}</td>
                  <td class="celda3" colspan="2">${porcentaje}%</td>
@@ -133,3 +145,18 @@ async function printabla3() {
 }
 
 printabla3()
+
+function template(max, min, capa) {
+    return `
+    <tr class="t-bod">
+    <td class="celda1" colspan="2">${max.name}</td>
+    <td class="celda2" colspan="2">${min.name}</td>
+    <td class="celda3" colspan="2">${capa.name}</td>
+</tr>
+<tr class="t-bod">
+    <td class="celda1" colspan="2">${max.percent}%</td>
+    <td class="celda2" colspan="2">${min.percent}%</td>
+    <td class="celda3" colspan="2">${capa.capacity}</td>
+</tr>`
+
+}
