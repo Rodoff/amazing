@@ -6,38 +6,18 @@ async function printabla1() {
         let eventos = response.events;
 
         let stats = eventos.map(each => {
-            let prueba = { 
-                name : [each.name],
-                percent : 100 * (each.assistance / each.capacity).toFixed(4) }
-                
-return prueba
-        }).sort((e1, e2)=>e1.percent -e2.percent)
-        capa = eventos.sort((e1, e2)=>e1.capacity -e2.capacity)
-
-        document.getElementById("tabla1").innerHTML=template(stats[stats.length -1], stats[0], capa[capa.length -1] )
-
-        
-        // for (let evento of eventos) {
-        //            evento.porcentaje = evento.assistance / evento.capacity * 100;
-        //            evento.porcentaje = evento.porcentaje.toFixed(2);
-        //       }
- 
-        
-        // eventos = eventos.sort((a, b) => a.porcentaje - b.porcentaje)
-        // document.getElementById("max").innerHTML = eventos[eventos.length - 1].name;
-        // document.getElementById("maxasis").innerHTML = eventos[eventos.length - 1].porcentaje + "%";
-        // document.getElementById("min").innerHTML = eventos[0].name;
-        // document.getElementById("minasis").innerHTML = eventos[0].porcentaje  + "%";
-
-
-        // eventos = eventos.sort((a, b) => a.capacity - b.capacity)
-        // document.getElementById("maxcapa").innerHTML = eventos[eventos.length - 1].name;
-        // document.getElementById("maxcapas").innerHTML = eventos[eventos.length - 1].capacity;
+            let prueba = {
+                name: [each.name],
+                percent: 100 * (each.assistance / each.capacity).toFixed(3)
+            }
+            return prueba
+        }).sort((a, b) => a.percent - b.percent)
+        capa = eventos.sort((a, b) => a.capacity - b.capacity)
+        document.getElementById("tabla1").innerHTML = template(stats[stats.length - 1], stats[0], capa[capa.length - 1])
     } catch (error) {
         console.log(error);
     }
 }
-
 printabla1();
 
 async function printabla2() {
@@ -47,51 +27,37 @@ async function printabla2() {
         let response = await fetchResponse.json();
         let eventos = response.events;
 
-        let categories = []
-        console.log(eventos.forEach(each => {
-            if (!categories.includes(each.category)) {
-                categories.push(each.category)
-            }
-        }))
-        // console.log(categories);
-
-        for (let evento of eventos) {
-            evento.ganancia = evento.estimate * evento.price;
-            // console.log(eventos.ganancia)
+        let categories = eventos.map(each => each.category)
+        categories = new Set(categories)
+        categories = [...categories]
+        let categos = categories.map(each => eventos.filter(cada => cada.category === each))
+        categos = categos.map(each => {
+            return each.reduce((acu1, valor) => {
+                let calculo1 = {
+                    assistotal: acu1.assistotal + valor.estimate,
+                    capatotal: acu1.capatotal + valor.capacity,
+                    ganancia: acu1.ganancia + (valor.estimate * valor.price),
+                    porcentaje: 100 * (acu1.assistotal / acu1.capatotal).toFixed(3),
+                    category: valor.category,
+                }
+                return calculo1
+            },
+                {
+                    ganancia: 0,
+                    assistotal: 0,
+                    capatotal: 0,
+                    porcentaje: 0,
+                    category: '',
+                }
+            )
         }
-
-        let acu1 = []
-        for (let category of categories) {
-            let ganancia = 0;
-            let assistotal = 0;
-            let capatotal = 0;
-
-            eventoscategories = eventos.filter(evento => evento.category === category)
-            eventoscategories.forEach(evento => {
-                ganancia += evento.ganancia;
-                assistotal += evento.estimate;
-                capatotal += evento.capacity;
-            })
-            // console.log(category + " => Ganancia:" + ganancia + ", Asistencia:" + assistotal + ", Capacidad:" + capatotal);
-            let porcentaje = assistotal / capatotal * 100;
-            porcentaje = porcentaje.toFixed(2);
-            //console.log(porcentaje);
-
-            let card = `<tr class="t-bod">
-                 <td class="celda1" colspan="2">${category}</td>
-                 <td class="celda2" colspan="2">$${ganancia}</td>
-                 <td class="celda3" colspan="2">${porcentaje}%</td>
-                 </tr>`;
-                 acu1.push(card)
-        }
-        document.getElementById("tabla2").innerHTML += acu1.join("");
-
+        )
+        document.getElementById("tabla2").innerHTML = categos.map(each => template2(each.category, each.ganancia, each.porcentaje)).join("");
     } catch (error) {
         console.log(error);
     }
 }
-
-printabla2() 
+printabla2()
 
 async function printabla3() {
     try {
@@ -100,50 +66,36 @@ async function printabla3() {
         let response = await fetchResponse.json();
         let eventos = response.events;
 
-        let categories = []
-        console.log(eventos.forEach(each => {
-            if (!categories.includes(each.category)) {
-                categories.push(each.category)
-            }
-        }))
-        // console.log(categories);
-
-        for (let evento of eventos) {
-            evento.ganancia = evento.assistance * evento.price;
-            // console.log(eventos.ganancia)
+        let categories = eventos.map(each => each.category)
+        categories = new Set(categories)
+        categories = [...categories]
+        let categos = categories.map(each => eventos.filter(cada => cada.category === each))
+        categos = categos.map(each => {
+            return each.reduce((acu1, valor) => {
+                let calculo1 = {
+                    assistotal: acu1.assistotal + valor.assistance,
+                    capatotal: acu1.capatotal + valor.capacity,
+                    ganancia: acu1.ganancia + (valor.assistance * valor.price),
+                    porcentaje: 100 * (acu1.assistotal / acu1.capatotal).toFixed(3),
+                    category: valor.category,
+                }
+                return calculo1
+            },
+                {
+                    ganancia: 0,
+                    assistotal: 0,
+                    capatotal: 0,
+                    porcentaje: 0,
+                    category: '',
+                }
+            )
         }
-
-        let acu2 = []
-        for (let category of categories) {
-            let ganancia = 0;
-            let assistotal = 0;
-            let capatotal = 0;
-
-            eventoscategories = eventos.filter(evento => evento.category === category)
-            eventoscategories.forEach(evento => {
-                ganancia += evento.ganancia;
-                assistotal += evento.assistance;
-                capatotal += evento.capacity;
-            })
-            // console.log(category + " => Ganancia:" + ganancia + ", Asistencia:" + assistotal + ", Capacidad:" + capatotal);
-            let porcentaje = assistotal / capatotal * 100;
-            porcentaje = porcentaje.toFixed(2);
-            //console.log(porcentaje);
-
-            let card = `<tr class="t-bod">
-                 <td class="celda1" colspan="2">${category}</td>
-                 <td class="celda2" colspan="2">$${ganancia}</td>
-                 <td class="celda3" colspan="2">${porcentaje}%</td>
-                 </tr>`;
-                 acu2.push(card)
-        }
-        document.getElementById("tabla3").innerHTML += acu2.join("");
-
+        )
+        document.getElementById("tabla3").innerHTML = categos.map(each => template2(each.category, each.ganancia, each.porcentaje)).join("");
     } catch (error) {
         console.log(error);
     }
 }
-
 printabla3()
 
 function template(max, min, capa) {
@@ -154,9 +106,19 @@ function template(max, min, capa) {
     <td class="celda3" colspan="2">${capa.name}</td>
 </tr>
 <tr class="t-bod">
-    <td class="celda1" colspan="2">${max.percent}%</td>
-    <td class="celda2" colspan="2">${min.percent}%</td>
-    <td class="celda3" colspan="2">${capa.capacity}</td>
+    <td class="celda1" colspan="2">${max.percent.toLocaleString("es-US")}%</td>
+    <td class="celda2" colspan="2">${min.percent.toLocaleString("en-US")}%</td>
+    <td class="celda3" colspan="2">${capa.capacity.toLocaleString("en-US")}</td>
 </tr>`
 
 }
+
+function template2(category, ganancia, porcentaje) {
+    return `
+    <tr class="t-bod">
+    <td class="celda1" colspan="2">${category}</td>
+    <td class="celda2" colspan="2">$${ganancia.toLocaleString("es-US")}</td>
+    <td class="celda3" colspan="2">${porcentaje.toLocaleString("es-US")}%</td>
+</tr>`
+}
+
